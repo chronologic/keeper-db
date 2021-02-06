@@ -54,9 +54,9 @@ var params = {
     database: parsed.endpoint || 'keeper',
     synchronize: env_1.DB_SYNC,
     logging: env_1.LOG_LEVEL === 'debug',
-    entities: env_1.PROD_BUILD ? ['dist/entities/**/*.js'] : ['src/entities/**/*.ts'],
-    migrations: env_1.PROD_BUILD ? ['dist/migrations/**/*.js'] : ['src/migrations/**/*.ts'],
-    subscribers: env_1.PROD_BUILD ? ['dist/subscribers/**/*.js'] : ['src/subscribers/**/*.ts'],
+    entities: [__dirname + ("/entities/**/*." + (env_1.PROD_BUILD ? 'js' : 'ts'))],
+    migrations: [__dirname + ("/migrations/**/*." + (env_1.PROD_BUILD ? 'js' : 'ts'))],
+    subscribers: [__dirname + ("/subscribers/**/*." + (env_1.PROD_BUILD ? 'js' : 'ts'))],
     ssl: host !== 'localhost',
 };
 function createConnection() {
