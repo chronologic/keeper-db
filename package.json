@@ -13,11 +13,15 @@
   },
   "dependencies": {
     "ethers": "^5.0.29",
+    "pg": "^8.5.1",
+    "connection-string-parser": "^1.0.3",
     "typeorm": "^0.2.30",
     "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/node": "^14.14.25",
+    "cross-env": "^7.0.3",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }
 }
