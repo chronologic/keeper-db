@@ -40,4 +40,5 @@ node_modules/
 .LSOverride
 
 dist
+dist_temp
 data
