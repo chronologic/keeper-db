@@ -7,9 +7,11 @@
     "eslint": "eslint src/index.ts",
     "build": "tsc",
     "lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts",
+    "dev": "ts-node ./src/index.ts",
+    "start": "node dist/index.js",
     "db-sync": "cross-env DB_SYNC=true ts-node ./src/dbSync.ts",
     "fix-lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts --fix",
-    "build-release": "npm run build && git checkout release && rimraf dist && mkdir -p dist && cp -r dist_temp/* dist/ && rimraf dist_temp"
+    "build-release": "npm run build && cp -r dist/* dist_temp/ && git checkout release && rimraf dist && mkdir -p dist && cp -r dist_temp/* dist/ && rimraf dist_temp"
   },
   "dependencies": {
     "connection-string-parser": "^1.0.3",

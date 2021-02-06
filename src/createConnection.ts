@@ -1,4 +1,4 @@
-import { DB_SYNC, DB_URL, LOG_LEVEL } from './env';
+import { DB_SYNC, DB_URL, LOG_LEVEL, PROD_BUILD } from './env';
 import { ConnectionStringParser } from 'connection-string-parser';
 import { ConnectionOptions, createConnection as typeormCreateConnection } from 'typeorm';
 
@@ -18,9 +18,9 @@ const params: ConnectionOptions = {
   database: parsed.endpoint || 'keeper',
   synchronize: DB_SYNC,
   logging: LOG_LEVEL === 'debug',
-  entities: ['dist/entities/**/*.js', 'src/entities/**/*.ts'],
-  migrations: ['dist/migrations/**/*.js', 'src/migrations/**/*.ts'],
-  subscribers: ['dist/subscribers/**/*.js', 'src/subscribers/**/*.ts'],
+  entities: PROD_BUILD ? ['dist/entities/**/*.js'] : ['src/entities/**/*.ts'],
+  migrations: PROD_BUILD ? ['dist/migrations/**/*.js'] : ['src/migrations/**/*.ts'],
+  subscribers: PROD_BUILD ? ['dist/subscribers/**/*.js'] : ['src/subscribers/**/*.ts'],
   ssl: host !== 'localhost',
 };
 
