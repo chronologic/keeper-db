@@ -1,5 +1,5 @@
 import './env';
-import { createConnection } from 'typeorm';
+import { createConnection } from './createConnection';
 import logger from './logger';
 
 createConnection().then(() => {

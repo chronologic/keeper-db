@@ -12,9 +12,10 @@
     "build-release": "git checkout release && npm run build"
   },
   "dependencies": {
+    "connection-string-parser": "^1.0.3",
+    "dotenv": "^8.2.0",
     "ethers": "^5.0.29",
     "pg": "^8.5.1",
-    "connection-string-parser": "^1.0.3",
     "typeorm": "^0.2.30",
     "winston": "^3.3.3"
   },
