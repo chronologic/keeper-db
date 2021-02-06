@@ -18,7 +18,6 @@ const parser = new connection_string_parser_1.ConnectionStringParser({
 });
 const parsed = parser.parse(env_1.DB_URL);
 const { host, port } = parsed.hosts[0];
-console.log(env_1.DB_URL, parsed);
 const params = {
     type: 'postgres',
     host: host || 'localhost',
