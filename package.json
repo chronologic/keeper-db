@@ -8,7 +8,8 @@
     "build": "tsc",
     "lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts",
     "db-sync": "cross-env DB_SYNC=true ts-node ./src/dbSync.ts",
-    "fix-lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts --fix"
+    "fix-lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts --fix",
+    "build-release": "git checkout release && npm run build"
   },
   "dependencies": {
     "ethers": "^5.0.29",
