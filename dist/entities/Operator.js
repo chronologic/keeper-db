@@ -10,41 +10,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Operator = void 0;
-const typeorm_1 = require("typeorm");
-const shared_1 = require("./shared");
-const Deposit_1 = require("./Deposit");
-const User_1 = require("./User");
-let Operator = class Operator {
-};
-__decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
-    __metadata("design:type", Number)
-], Operator.prototype, "id", void 0);
-__decorate([
-    typeorm_1.ManyToMany((_type) => User_1.User, (user) => user.operators),
-    typeorm_1.JoinTable(),
-    __metadata("design:type", Array)
-], Operator.prototype, "users", void 0);
-__decorate([
-    typeorm_1.ManyToMany((_type) => Deposit_1.Deposit, (deposit) => deposit.operators),
-    typeorm_1.JoinTable(),
-    __metadata("design:type", Array)
-], Operator.prototype, "deposits", void 0);
-__decorate([
-    typeorm_1.Index({ unique: true }),
-    typeorm_1.Column({ transformer: shared_1.lowercaseTransformer }),
-    __metadata("design:type", String)
-], Operator.prototype, "address", void 0);
-__decorate([
-    typeorm_1.CreateDateColumn(),
-    __metadata("design:type", Date)
-], Operator.prototype, "createDate", void 0);
-__decorate([
-    typeorm_1.UpdateDateColumn(),
-    __metadata("design:type", Date)
-], Operator.prototype, "updateDate", void 0);
-Operator = __decorate([
-    typeorm_1.Entity()
-], Operator);
+var typeorm_1 = require("typeorm");
+var shared_1 = require("./shared");
+var Deposit_1 = require("./Deposit");
+var User_1 = require("./User");
+var Operator = /** @class */ (function () {
+    function Operator() {
+    }
+    __decorate([
+        typeorm_1.PrimaryGeneratedColumn(),
+        __metadata("design:type", Number)
+    ], Operator.prototype, "id", void 0);
+    __decorate([
+        typeorm_1.ManyToMany(function (_type) { return User_1.User; }, function (user) { return user.operators; }),
+        typeorm_1.JoinTable(),
+        __metadata("design:type", Array)
+    ], Operator.prototype, "users", void 0);
+    __decorate([
+        typeorm_1.ManyToMany(function (_type) { return Deposit_1.Deposit; }, function (deposit) { return deposit.operators; }),
+        typeorm_1.JoinTable(),
+        __metadata("design:type", Array)
+    ], Operator.prototype, "deposits", void 0);
+    __decorate([
+        typeorm_1.Index({ unique: true }),
+        typeorm_1.Column({ transformer: shared_1.lowercaseTransformer }),
+        __metadata("design:type", String)
+    ], Operator.prototype, "address", void 0);
+    __decorate([
+        typeorm_1.CreateDateColumn(),
+        __metadata("design:type", Date)
+    ], Operator.prototype, "createDate", void 0);
+    __decorate([
+        typeorm_1.UpdateDateColumn(),
+        __metadata("design:type", Date)
+    ], Operator.prototype, "updateDate", void 0);
+    Operator = __decorate([
+        typeorm_1.Entity()
+    ], Operator);
+    return Operator;
+}());
 exports.Operator = Operator;
 //# sourceMappingURL=Operator.js.map
