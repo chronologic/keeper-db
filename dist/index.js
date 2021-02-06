@@ -10,7 +10,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getConnection = exports.createConnection = void 0;
+exports.getConnection = exports.createConnection = exports.EntityManager = void 0;
+var typeorm_1 = require("typeorm");
+Object.defineProperty(exports, "EntityManager", { enumerable: true, get: function () { return typeorm_1.EntityManager; } });
 __exportStar(require("./entities"), exports);
 var createConnection_1 = require("./createConnection");
 Object.defineProperty(exports, "createConnection", { enumerable: true, get: function () { return createConnection_1.createConnection; } });
