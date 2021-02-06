@@ -18,9 +18,9 @@ const params: ConnectionOptions = {
   database: parsed.endpoint || 'keeper',
   synchronize: DB_SYNC,
   logging: LOG_LEVEL === 'debug',
-  entities: PROD_BUILD ? ['dist/entities/**/*.js'] : ['src/entities/**/*.ts'],
-  migrations: PROD_BUILD ? ['dist/migrations/**/*.js'] : ['src/migrations/**/*.ts'],
-  subscribers: PROD_BUILD ? ['dist/subscribers/**/*.js'] : ['src/subscribers/**/*.ts'],
+  entities: [__dirname + `/entities/**/*.${PROD_BUILD ? 'js' : 'ts'}`],
+  migrations: [__dirname + `/migrations/**/*.${PROD_BUILD ? 'js' : 'ts'}`],
+  subscribers: [__dirname + `/subscribers/**/*.${PROD_BUILD ? 'js' : 'ts'}`],
   ssl: host !== 'localhost',
 };
 
