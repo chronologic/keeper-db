@@ -21,6 +21,12 @@ The schema should be deployed to a PostgreSQL instance.
 
 ## Environment variables
 
+This repo uses [`dotenv`](https://www.npmjs.com/package/dotenv) to load environment variables.
+
+An `.env` file should be created based on the `.env.example` template file. The `.env` file should never be commited.
+
+Below is a list of possible environment variables.
+
 | Name      | Type     | Default | Description                                                                     |
 | --------- | -------- | ------- | ------------------------------------------------------------------------------- |
 | LOG_LEVEL | `string` | `info`  | Standard [`npm`](https://github.com/winstonjs/winston#logging-levels) log level |
@@ -28,11 +34,11 @@ The schema should be deployed to a PostgreSQL instance.
 
 ## Deployment
 
-Run `npm run db-sync` to synchronize the schema with database specified in the `DB_URL` env variable.
+Run `npm run db-sync` to synchronize the schema with database specified in the `DB_URL` env variable. Be careful in production, as this process may be destructive!
 
 ## Creating a release
 
-Run `npm run build-release`. This will compile the source code and switch to `release` branch. The compiled code can then be commited and tagged, e.g. `v1.0.1`.
+Run `npm run build-release`. This will compile the source code and switch to `release` branch. The compiled code can then be commited and tagged, e.g. `v1.0.1`. The release version may then be used as a dependency in other projects.
 
 ## Development
 
