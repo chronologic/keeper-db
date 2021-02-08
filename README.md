@@ -27,10 +27,10 @@ An `.env` file should be created based on the `.env.example` template file. The 
 
 Below is a list of possible environment variables.
 
-| Name      | Type     | Default | Description                                                                     |
-| --------- | -------- | ------- | ------------------------------------------------------------------------------- |
-| LOG_LEVEL | `string` | `info`  | Standard [`npm`](https://github.com/winstonjs/winston#logging-levels) log level |
-| DB_URL    | `string` |         | PostgreSQL connection string                                                    |
+| Name        | Type     | Default | Description                                                                     |
+| ----------- | -------- | ------- | ------------------------------------------------------------------------------- |
+| `LOG_LEVEL` | `string` | `info`  | Standard [`npm`](https://github.com/winstonjs/winston#logging-levels) log level |
+| `DB_URL`    | `string` |         | PostgreSQL connection string                                                    |
 
 ## Deployment
 
