@@ -1,4 +1,4 @@
-export { EntityManager } from 'typeorm';
+export * as typeorm from 'typeorm';
 
 export * from './entities';
 export { createConnection } from './createConnection';
