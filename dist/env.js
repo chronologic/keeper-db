@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PROD_BUILD = exports.DB_SYNC = exports.DB_URL = exports.LOG_LEVEL = void 0;
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-exports.LOG_LEVEL = process.env.LOG_LEVEL;
+exports.LOG_LEVEL = process.env.LOG_LEVEL || 'info';
 exports.DB_URL = process.env.DB_URL;
 exports.DB_SYNC = process.env.DB_SYNC === 'true';
 exports.PROD_BUILD = __filename.endsWith('.js');
