@@ -29,14 +29,14 @@ In production, environment variables can be injected directly.
 
 Below is a list of possible environment variables.
 
-| Name        | Type     | Default | Description                                                                     |
-| ----------- | -------- | ------- | ------------------------------------------------------------------------------- |
-| `LOG_LEVEL` | `string` | `info`  | Standard [`npm`](https://github.com/winstonjs/winston#logging-levels) log level |
-| `DB_URL`    | `string` |         | PostgreSQL connection string                                                    |
+| Name           | Type     | Default | Description                                                                     |
+| -------------- | -------- | ------- | ------------------------------------------------------------------------------- |
+| `LOG_LEVEL`    | `string` | `info`  | Standard [`npm`](https://github.com/winstonjs/winston#logging-levels) log level |
+| `DATABASE_URL` | `string` |         | PostgreSQL connection string                                                    |
 
 ## Deployment
 
-Run `npm run db-sync` to synchronize the schema with database specified in the `DB_URL` env variable. Be careful in production, as this process may be destructive!
+Run `npm run db-sync` to synchronize the schema with database specified in the `DATABASE_URL` env variable. Be careful in production, as this process may be destructive!
 
 ## Creating a release
 
@@ -44,6 +44,6 @@ Run `npm run build-release`. This will compile the source code and switch to `re
 
 ## Development
 
-Set `DB_URL` to point to development database instance.
+Set `DATABASE_URL` to point to development database instance.
 Run `npm run db-sync` to synchronize the schema with the DB instance.
 Run `npm run dev` to run contents of `src/dev.ts` to try out any queries etc as needed.

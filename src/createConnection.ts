@@ -1,4 +1,4 @@
-import { DB_SYNC, DB_URL, LOG_LEVEL, PROD_BUILD } from './env';
+import { DB_SYNC, DATABASE_URL, LOG_LEVEL, PROD_BUILD } from './env';
 import { ConnectionStringParser } from 'connection-string-parser';
 import { ConnectionOptions, createConnection as typeormCreateConnection } from 'typeorm';
 
@@ -6,7 +6,7 @@ const parser = new ConnectionStringParser({
   scheme: 'postgres',
 } as any);
 
-const parsed = parser.parse(DB_URL);
+const parsed = parser.parse(DATABASE_URL);
 const { host, port } = parsed.hosts[0];
 
 const params: ConnectionOptions = {
