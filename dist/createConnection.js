@@ -43,7 +43,7 @@ var typeorm_1 = require("typeorm");
 var parser = new connection_string_parser_1.ConnectionStringParser({
     scheme: 'postgres',
 });
-var parsed = parser.parse(env_1.DB_URL);
+var parsed = parser.parse(env_1.DATABASE_URL);
 var _a = parsed.hosts[0], host = _a.host, port = _a.port;
 var params = {
     type: 'postgres',
