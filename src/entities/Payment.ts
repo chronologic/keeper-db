@@ -21,7 +21,7 @@ export class Payment {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne((_type) => User, { onDelete: 'CASCADE' })
+  @ManyToOne((_type) => User, { onDelete: 'SET NULL' })
   user: User;
 
   @Column({ nullable: true })
