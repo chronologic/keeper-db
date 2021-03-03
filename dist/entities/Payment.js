@@ -28,7 +28,7 @@ var Payment = /** @class */ (function () {
         __metadata("design:type", Number)
     ], Payment.prototype, "id", void 0);
     __decorate([
-        typeorm_1.ManyToOne(function (_type) { return User_1.User; }, { onDelete: 'CASCADE' }),
+        typeorm_1.ManyToOne(function (_type) { return User_1.User; }, { onDelete: 'SET NULL' }),
         __metadata("design:type", User_1.User)
     ], Payment.prototype, "user", void 0);
     __decorate([
